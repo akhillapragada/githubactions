@@ -1,0 +1,13 @@
+name: On Push Event
+
+on: [push]
+
+jobs:
+
+   push-job:
+     runs-on: ubuntu-latest
+
+   steps:
+     - name: Say Hello
+       run: echo "this workflow runs on any push event"
+     
