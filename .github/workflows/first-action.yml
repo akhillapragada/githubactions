@@ -3,11 +3,13 @@ on: [push]
 
 jobs:
  build:
-    runs-on:ubuntu-latest
+ 
+     runs_on: ubuntu-latest
+     
  steps:
-     - name: Checkout cRepository
-       uses: actions/checkout@v4
+      - name: Checkout cRepository
+        uses: actions/checkout@v4
 
 
-     - name: Run a greeting
-       run: echo "hello, github actions is working"
+      - name: Run a greeting
+        run: echo "hello, github actions is working"
