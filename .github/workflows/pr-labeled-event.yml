@@ -1,0 +1,13 @@
+name: On PR Labeled
+
+on: 
+  pull_request:
+    types: [labeled]
+
+jobs:
+   label-job:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Print PR Event Info
+         run: echo "pull request labeled:$ {{github.event.label.name}}"        
