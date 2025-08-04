@@ -1,0 +1,13 @@
+name: Tag Filter Workflow
+
+on:
+  push:
+   tags:
+    - 'v*'
+
+jobs:
+   on-tag:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Tag triggered
+        run: echo "This ran because a tag was pushed"
