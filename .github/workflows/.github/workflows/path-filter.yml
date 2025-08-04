@@ -1,0 +1,13 @@
+name: Path Filter Workflow
+
+on: 
+  push:
+   paths:
+     - 'docs/**'
+
+jobs:
+  docs-update:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Path trigger activated
+      run: echo "Changed something in docs/"
