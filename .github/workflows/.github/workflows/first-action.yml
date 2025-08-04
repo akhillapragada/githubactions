@@ -1,0 +1,14 @@
+name: First Action with Path filter
+
+on:
+ push:
+  paths:
+   - 'docs.**'
+
+
+jobs:
+  run-docs:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Check docs folder
+     run: echo "docs folder modified"
