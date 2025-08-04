@@ -1,0 +1,14 @@
+name: Windows Runner Workflow
+
+on:[push]
+
+jobs:
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Checkedout code
+       uses: actions/checkout@v4
+
+
+      - name: Run on windows
+       run: echo "Running on windows runner"
