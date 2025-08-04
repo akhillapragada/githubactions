@@ -1,13 +1,13 @@
-name: First Workflow
+name: First github action
 on: [push]
 
 jobs:
    build:
     runs-on:ubuntu-latest
    steps:
-     - name: Checkout code
+     - name: Checkout cRepository
        uses: actions/checkout@v4
 
 
-     - name: Run a Script
+     - name: Run a greeting
        run: echo "hello, github actions is working"
