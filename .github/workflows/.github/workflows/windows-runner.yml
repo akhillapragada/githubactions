@@ -1,10 +1,10 @@
 name: Windows Runner Workflow
 
-on:[push]
+on [push]
 
 jobs:
   windows-job:
-    runs-on: windows-latest
+    runs-on windows-latest
     steps:
       - name: Checkedout code
        uses: actions/checkout@v4
