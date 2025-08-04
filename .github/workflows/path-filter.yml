@@ -1,0 +1,14 @@
+name: Run Only on Docs Change
+
+on:
+  push:
+    paths:
+      -'docs/**'
+
+jobs:
+  docs-job:
+   runs-on: ubuntu-latest
+
+   steps:
+    - name: Changed Docs
+      run: echo " Documentation files changed"
