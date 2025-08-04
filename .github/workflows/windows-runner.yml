@@ -1,0 +1,11 @@
+name: Windows Test Run
+
+on:[push]
+
+jobs:
+  windows-job:
+    runs-on: windows-latest
+
+    steps:
+      - name: Show Directory
+       run: dir
