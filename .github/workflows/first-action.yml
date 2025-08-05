@@ -1,15 +1,15 @@
-name: First github action
-on: [push]
+name: First GitHub Action
+
+on:
+  push:
 
 jobs:
- build:
- 
-     runs_on: ubuntu-latest
-     
- steps:
-      - name: Checkout cRepository
-        uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Run a greeting
         run: echo "hello, github actions is working"
