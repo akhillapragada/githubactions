@@ -1,7 +1,9 @@
-nname: First GitHub Action
+name: First GitHub Action
 
 on:
   push:
+    branches:
+      - main  # Ensure this is set to the correct branch
 
 jobs:
   build:
@@ -12,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run a greeting
-        run: echo "hello, github actions is working"
+        run: echo "Hello, GitHub Actions is working!"
