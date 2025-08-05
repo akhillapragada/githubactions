@@ -1,0 +1,40 @@
+name: PR and Issue Events Workflow
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [labeled, opened, synchronize]
+  pull_request_target:
+    types: [labeled]
+
+jobs:
+  on-issue-opened:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print issue opened
+        run: echo "An issue has been opened by ${{ github.actor }}"
+
+  on-pr-labeled:
+    if: |
+      github.event_name == 'pull_request' || 
+      github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show PR label
+        run: |
+          echo "Labels: ${{ toJson(github.event.pull_request.labels) }}"
+          echo "Triggered by label event on PR"
+
+  path-filter-job:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check changed files
+        run: |
+          echo "Files changed:"
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          git diff --name-only origin/${{ github.event.pull_request.base.ref }} > changed.txt
+          cat changed.txt
