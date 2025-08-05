@@ -15,6 +15,4 @@ steps:
 
      - name: Run echo command
        run: echo "Push event triggered"
-     
-       run: echo "this workflow runs on any push event"
-     
+         
