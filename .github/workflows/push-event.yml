@@ -1,4 +1,4 @@
-name: Psh Event Workflow
+name: Push Event Workflow
 
 on:
   push:
@@ -7,10 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
-  steps:
-    - name: Checkout repository
-     uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: run a sample command
-     run: echo "push event triggered successfully"
+      - name: Run a sample command
+        run: echo "push event triggered successfully"
+
