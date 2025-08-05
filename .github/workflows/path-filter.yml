@@ -1,14 +1,18 @@
-name: Run Only on Docs Change
+name: Path Filter Workflow
 
 on:
   push:
     paths:
-      -'docs/**'
+      - 'src/**'
+      - 'docs/**'
 
 jobs:
-  docs-job:
-   runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-   steps:
-    - name: Changed Docs
-      run: echo " Documentation files changed"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Path Filter
+        run: echo "Changes detected in specified paths."
