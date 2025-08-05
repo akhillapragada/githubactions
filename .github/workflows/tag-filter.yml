@@ -1,17 +1,19 @@
-name: On Version Tag Push
+name: Tag Filter Workflow
 
 on:
   push:
     tags:
-      - 'v*'
-
+      - 'v*' # For version tags like v1.0.0, v2.0.1, etc.
 
 jobs:
-    tag-job:
-     runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-     steps:
-      - name: Print tag
-        run: echo "New release tag pushed:${{github.ref}}"
-    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Tag Filter
+        run: echo "Tag-based push event detected."
+
     
