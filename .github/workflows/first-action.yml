@@ -1,4 +1,4 @@
-name: First GitHub Action
+nname: First GitHub Action
 
 on:
   push:
