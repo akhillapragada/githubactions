@@ -1,13 +1,17 @@
-name: On PR Labeled
+name: PR Labeled Event
 
-on: 
+on:
   pull_request:
-    types: [labeled]
+    types:
+      - labeled
 
 jobs:
-   label-job:
-     runs-on: ubuntu-latest
+  label-check:
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: Print PR Event Info
-         run: echo "pull request labeled:$ {{github.event.label.name}}"        
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print PR label
+        run: echo "A label has been added to the PR."
